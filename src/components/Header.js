@@ -34,12 +34,14 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10
+    padding: 10,
+    backgroundColor: "#167F5F"
   },
   title: {
     fontSize: 50,
     textAlign: "center",
-    fontFamily: "KohinoorDevanagari-Light"
+    fontFamily: "KohinoorDevanagari-Light",
+    color: "white"
   }
 });
 
