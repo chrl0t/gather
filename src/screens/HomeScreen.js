@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Loading from "../components/Loading";
 
 const HomeScreen = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   if (loading) {
     return <Loading />;
   } else {
