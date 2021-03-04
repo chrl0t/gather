@@ -8,7 +8,6 @@ const ForageCard = ({ navigation }) => {
   const [warnings, setWarnings] = useState(
     "This plant can grow alongside a poisonous one called Lords and Ladies"
   );
-  console.log(navigation);
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>

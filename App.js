@@ -1,11 +1,12 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import { useFonts, Caveat } from "@expo-google-fonts/inter";
 import HomeScreen from "./src/screens/HomeScreen";
+import ForageScreen from "./src/screens/ForageScreen";
 
 const navigator = createStackNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    Forage: ForageScreen
   },
   {
     initialRouteName: "Home",
