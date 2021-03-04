@@ -19,7 +19,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#167F5F",
+    backgroundColor: "#3C754C",
     height: "100%"
   },
   title: {
