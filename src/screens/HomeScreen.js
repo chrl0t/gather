@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import Header from "../components/Header";
 import Loading from "../components/Loading";
+import Header from "../components/Header";
+import ForageCard from "../components/ForageCard";
 
 const HomeScreen = () => {
   const [loading, setLoading] = useState(false);
@@ -12,6 +13,7 @@ const HomeScreen = () => {
       <View style={styles.container}>
         <Header />
         <Text style={styles.title}>What's in season right now...</Text>
+        <ForageCard />
       </View>
     );
   }
