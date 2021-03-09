@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { db } from "../firebase/config";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
