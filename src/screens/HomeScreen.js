@@ -36,7 +36,6 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate("Forage");
           }}
         >
-          {}
           {forages.map((forage) => {
             return <ForageCard forage={forage} key={forage.name} />;
           })}

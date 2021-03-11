@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-const ForageCard = ({ navigation }) => {
-  const [name, setName] = useState("Wild Garlic");
-  const [availability, setAvailability] = useState("March - May");
-  const [locations, setLocations] = useState("Cemeteries, Parks, Woodland");
-  const [warnings, setWarnings] = useState(
-    "This plant can grow alongside a poisonous one called Lords and Ladies"
-  );
+const ForageCard = ({ forage }) => {
+  const { name, availability, locations, warnings, image } = forage;
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -21,7 +16,9 @@ const ForageCard = ({ navigation }) => {
       </View>
       <Image
         style={styles.image}
-        source={require("../images/wild-garlic.png")}
+        source={{
+          uri: image
+        }}
       />
     </View>
   );
