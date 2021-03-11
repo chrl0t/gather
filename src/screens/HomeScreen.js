@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { db } from "../firebase/config";
 import Loading from "../components/Loading";
@@ -7,6 +7,23 @@ import ForageCard from "../components/ForageCard";
 
 const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
+  const [forages, setForages] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const foragesRef = db.collection("forages");
+      const snapshot = await foragesRef.get();
+      const fetchedForages = [];
+      snapshot.forEach((doc) => {
+        const forage = doc.data();
+        fetchedForages.push(forage);
+      });
+      setForages(fetchedForages);
+      console.log(forages);
+    }
+    fetchData();
+  }, []);
+
   if (loading) {
     return <Loading />;
   } else {
