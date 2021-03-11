@@ -36,7 +36,10 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate("Forage");
           }}
         >
-          <ForageCard forages={forages} />
+          {}
+          {forages.map((forage) => {
+            return <ForageCard forage={forage} key={forage.name} />;
+          })}
         </TouchableOpacity>
       </View>
     );
