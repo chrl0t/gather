@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList
+} from "react-native";
 import { db } from "../firebase/config";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
@@ -31,15 +37,21 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
         <Header />
         <Text style={styles.title}>What's in season right now...</Text>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Forage");
+        <FlatList
+          data={forages}
+          keyExtractor={(result) => result.name}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("Forage", { id: item.id });
+                }}
+              >
+                <ForageCard forage={item} />
+              </TouchableOpacity>
+            );
           }}
-        >
-          {forages.map((forage) => {
-            return <ForageCard forage={forage} key={forage.name} />;
-          })}
-        </TouchableOpacity>
+        />
       </View>
     );
   }
