@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
 
 const HomeScreen = ({ navigation }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [forages, setForages] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
         fetchedForages.push(forage);
       });
       setForages(fetchedForages);
-      console.log(forages);
+      setLoading(false);
     }
     fetchData();
   }, []);
@@ -36,7 +36,7 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate("Forage");
           }}
         >
-          <ForageCard />
+          <ForageCard forages={forages} />
         </TouchableOpacity>
       </View>
     );
