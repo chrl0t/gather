@@ -14,10 +14,10 @@ const ForageScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.latinTitle}>{latin}</Text>
-      <Image
+      {/* <Image
         style={styles.image}
         source={require("../images/wild-garlic-2.png")}
-      />
+      /> */}
       <Text style={styles.identification}>Description:</Text>
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.identification}>Identification:</Text>
