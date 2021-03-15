@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     async function fetchData() {
       const foragesRef = db.collection("forages");
-      const snapshot = await foragesRef.get();
+      const snapshot = await foragesRef.orderBy("excitement").get();
       const fetchedForages = [];
       snapshot.forEach((doc) => {
         const forage = doc.data();
