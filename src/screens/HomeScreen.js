@@ -10,12 +10,18 @@ import { db } from "../firebase/config";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
+import { determineSeason } from "../utils/check-season";
 
 const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [forages, setForages] = useState([]);
+  const [season, setSeason] = useState("");
+
+  const date = new Date();
+  const month = date.getMonth();
 
   useEffect(() => {
+    setSeason(determineSeason(month));
     async function fetchData() {
       const foragesRef = db.collection("forages");
       const snapshot = await foragesRef.orderBy("excitement").get();
