@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
 const ForageCard = ({ forage }) => {
-  const { name, availability, locations, warnings, image } = forage;
+  const { name, availability, locations, warnings, image, id } = forage;
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
