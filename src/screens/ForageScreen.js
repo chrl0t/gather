@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-const ForageScreen = () => {
+const ForageScreen = ({ navigation }) => {
   const [name, setName] = useState("Wild Garlic");
   const [latin, setLatin] = useState("Allium ursinum");
   const [description, setDescription] = useState(
@@ -10,6 +10,7 @@ const ForageScreen = () => {
   const [identification, setIdentification] = useState(
     "Ranging from 2-30 centimetres in height, wild garlic's bright green tapered leaves are best picked by the stem a coupole of centimetres up from the ground. Be careful not to uproot it, as you'll definitely want to return to the same spot to pick a few of its tall white flower heads for a salad garnish when they start to bloom, and even collect some green, spherical seed pod clusters at the end of the season for pickling."
   );
+  const id = navigation.getParam("id");
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
