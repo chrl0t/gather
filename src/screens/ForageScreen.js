@@ -8,6 +8,9 @@ const ForageScreen = ({ navigation }) => {
   const [latin, setLatin] = useState("");
   const [description, setDescription] = useState("");
   const [identification, setIdentification] = useState("");
+  const [image, setImage] = useState(
+    "https://i1.wp.com/www.cssscript.com/wp-content/uploads/2014/10/iOS-OS-X-Style-Pure-CSS-Loading-Spinner.jpg?fit=400%2C300&ssl=1"
+  );
   const id = navigation.getParam("id");
 
   useEffect(() => {
@@ -22,6 +25,7 @@ const ForageScreen = ({ navigation }) => {
       setLatin(forageInfo.latin);
       setDescription(forageInfo.description);
       setIdentification(forageInfo.identification);
+      setImage(forageInfo.mainimage);
     }
     fetchData();
   }, []);
@@ -29,10 +33,7 @@ const ForageScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.latinTitle}>{latin}</Text>
-      {/* <Image
-        style={styles.image}
-        source={require("../images/wild-garlic-2.png")}
-      /> */}
+      <Image style={styles.image} source={{ uri: image }} />
       <Text style={styles.identification}>Description:</Text>
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.identification}>Identification:</Text>
@@ -43,8 +44,8 @@ const ForageScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 250,
-    height: 300,
+    width: 210,
+    height: 250,
     alignSelf: "center",
     margin: 15
   },
