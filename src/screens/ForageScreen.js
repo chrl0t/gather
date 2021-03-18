@@ -34,7 +34,6 @@ const ForageScreen = ({ navigation }) => {
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.latinTitle}>{latin}</Text>
       <Image style={styles.image} source={{ uri: image }} />
-      <Text style={styles.identification}>Description:</Text>
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.identification}>Identification:</Text>
       <Text style={styles.description}>{identification}</Text>
@@ -44,8 +43,8 @@ const ForageScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 210,
-    height: 250,
+    width: 250,
+    height: 270,
     alignSelf: "center",
     margin: 15
   },
