@@ -10,6 +10,7 @@ import { db } from "../firebase/config";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
+import { fetchListOfForages } from "../api";
 
 const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
@@ -17,18 +18,7 @@ const HomeScreen = ({ navigation }) => {
   const [season, setSeason] = useState("Spring");
 
   useEffect(() => {
-    async function fetchData() {
-      const foragesRef = db.collection("forages").where(season, "==", true);
-      const snapshot = await foragesRef.orderBy("excitement").get();
-      const fetchedForages = [];
-      snapshot.forEach((doc) => {
-        const forage = doc.data();
-        fetchedForages.push(forage);
-      });
-      setForages(fetchedForages);
-      setLoading(false);
-    }
-    fetchData();
+    fetchListOfForages(season, setForages, setLoading);
   }, []);
 
   if (loading) {
