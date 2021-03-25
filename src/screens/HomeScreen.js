@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   FlatList
 } from "react-native";
-import { db } from "../firebase/config";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
