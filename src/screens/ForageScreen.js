@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { useEffect } from "react/cjs/react.development";
-import { db } from "../firebase/config";
 import { fetchForage } from "../api";
 
 const ForageScreen = ({ navigation }) => {
