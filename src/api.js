@@ -12,3 +12,24 @@ export async function fetchListOfForages(season, setForages, setLoading) {
   setForages(fetchedForages);
   setLoading(false);
 }
+
+export async function fetchForage(
+  id,
+  setName,
+  setLatin,
+  setDescription,
+  setIdentification,
+  setImage
+) {
+  const foragesRef = db.collection("forages").where("id", "==", id);
+  const snapshot = await foragesRef.get();
+  let forageInfo = {};
+  snapshot.forEach((doc) => {
+    forageInfo = doc.data();
+  });
+  setName(forageInfo.name);
+  setLatin(forageInfo.latin);
+  setDescription(forageInfo.description);
+  setIdentification(forageInfo.identification);
+  setImage(forageInfo.mainimage);
+}

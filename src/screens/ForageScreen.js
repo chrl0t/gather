@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { useEffect } from "react/cjs/react.development";
 import { db } from "../firebase/config";
+import { fetchForage } from "../api";
 
 const ForageScreen = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -14,20 +15,14 @@ const ForageScreen = ({ navigation }) => {
   const id = navigation.getParam("id");
 
   useEffect(() => {
-    async function fetchData() {
-      const foragesRef = db.collection("forages").where("id", "==", id);
-      const snapshot = await foragesRef.get();
-      let forageInfo = {};
-      snapshot.forEach((doc) => {
-        forageInfo = doc.data();
-      });
-      setName(forageInfo.name);
-      setLatin(forageInfo.latin);
-      setDescription(forageInfo.description);
-      setIdentification(forageInfo.identification);
-      setImage(forageInfo.mainimage);
-    }
-    fetchData();
+    fetchForage(
+      id,
+      setName,
+      setLatin,
+      setDescription,
+      setIdentification,
+      setImage
+    );
   }, []);
   return (
     <View style={styles.container}>
