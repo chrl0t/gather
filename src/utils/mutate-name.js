@@ -1,3 +1,3 @@
 export const mutateName = (name) => {
-  return name;
+  return name.toLowerCase();
 };

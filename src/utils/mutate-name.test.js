@@ -6,4 +6,9 @@ describe("mutateName()", () => {
     const output = mutateName(input);
     expect(typeof output).toBe("string");
   });
+  it("should return a string in all lowercase", () => {
+    const input = "Nettle";
+    const output = mutateName(input);
+    expect(output === input.toLowerCase()).toBe(true);
+  });
 });
