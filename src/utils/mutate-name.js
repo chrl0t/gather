@@ -1,3 +1,3 @@
 export const mutateName = (name) => {
-  return name.toLowerCase();
+  return name.toLowerCase().split(" ").join("+");
 };

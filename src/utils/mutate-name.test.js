@@ -11,4 +11,10 @@ describe("mutateName()", () => {
     const output = mutateName(input);
     expect(output === input.toLowerCase()).toBe(true);
   });
+  it("should return two worded strings as two words separated by +", () => {
+    const input = "Wild Garlic";
+    const output = mutateName(input);
+    const expectedOutput = "wild+garlic";
+    expect(output).toEqual(expectedOutput);
+  });
 });
