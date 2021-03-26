@@ -31,6 +31,7 @@ const ForageScreen = ({ navigation }) => {
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.identification}>Identification:</Text>
       <Text style={styles.description}>{identification}</Text>
+      <Text style={styles.recipes}>Recipes</Text>
     </View>
   );
 };
@@ -64,6 +65,13 @@ const styles = StyleSheet.create({
     fontFamily: "KohinoorDevanagari-Light",
     textAlign: "center",
     margin: 6
+  },
+  recipes: {
+    fontFamily: "KohinoorDevanagari-Light",
+    fontWeight: "600",
+    fontSize: 30,
+    alignSelf: "center",
+    padding: 10
   }
 });
 
