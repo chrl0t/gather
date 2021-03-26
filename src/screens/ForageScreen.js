@@ -34,7 +34,7 @@ const ForageScreen = ({ navigation }) => {
       <Text style={styles.description}>{identification}</Text>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Recipes");
+          navigation.navigate("Recipes", { name });
         }}
       >
         <Text style={styles.recipes}>Click here for recipes</Text>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   recipes: {
     fontFamily: "KohinoorDevanagari-Light",
     fontWeight: "600",
-    fontSize: 30,
+    fontSize: 20,
     alignSelf: "center",
     padding: 10
   }

@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const RecipesScreen = () => {
+const RecipesScreen = ({ navigation }) => {
+  const name = navigation.getParam("name");
+  const fetchName = name.toLowerCase();
   return (
     <View>
-      <Text>Recipe Screen</Text>
+      <Text>{name}</Text>
+      <Text>{fetchName}</Text>
     </View>
   );
 };
