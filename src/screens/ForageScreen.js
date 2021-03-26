@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import { useEffect } from "react/cjs/react.development";
 import { fetchForage } from "../api";
 
@@ -31,7 +32,13 @@ const ForageScreen = ({ navigation }) => {
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.identification}>Identification:</Text>
       <Text style={styles.description}>{identification}</Text>
-      <Text style={styles.recipes}>Recipes</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Recipes");
+        }}
+      >
+        <Text style={styles.recipes}>Click here for recipes</Text>
+      </TouchableOpacity>
     </View>
   );
 };
