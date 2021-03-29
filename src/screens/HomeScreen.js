@@ -9,7 +9,7 @@ import {
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
-import { fetchListOfForages } from "../api";
+import { fetchListOfForages } from "../api/firestore";
 
 const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);

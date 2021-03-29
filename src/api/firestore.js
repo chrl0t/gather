@@ -1,4 +1,4 @@
-import { db } from "./firebase/config";
+import { db } from "../firebase/config";
 
 export async function fetchListOfForages(season, setForages, setLoading) {
   const foragesRef = db.collection("forages").where(season, "==", true);
