@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { mutateName } from "../utils/mutate-name";
+import { checkIfVeg } from "../utils/check-if-veg";
 import { fetchRecipes } from "../api/edamam";
 import RecipeCard from "../components/RecipeCard";
 
@@ -21,7 +22,8 @@ const RecipesScreen = ({ navigation }) => {
             title={recipe.recipe.label}
             image={recipe.recipe.image}
             url={recipe.recipe.url}
-            key={recipe.recipe.id}
+            key={recipe.recipe.label}
+            healthLabel={checkIfVeg(recipe.recipe.healthLabels)}
           />
         );
       })}
