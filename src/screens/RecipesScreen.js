@@ -7,7 +7,7 @@ import Communications from "react-native-communications";
 const RecipesScreen = ({ navigation }) => {
   const [recipeTitle, setRecipeTitle] = useState("");
   const [recipeImage, setRecipeImage] = useState(
-    "https://cdn.cnn.com/cnnnext/dam/assets/200319162747-family-cooking-stock-super-tease.jpg"
+    "http://generousdeluxe.weebly.com/uploads/1/2/3/9/123925667/870805048.jpg"
   );
   const [recipeLink, setRecipeLink] = useState("");
   const name = navigation.getParam("name");
