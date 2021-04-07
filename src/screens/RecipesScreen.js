@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { mutateName } from "../utils/mutate-name";
 import { fetchRecipes } from "../api/edamam";
 import Communications from "react-native-communications";
+import RecipeCard from "../components/RecipeCard";
 
 const RecipesScreen = ({ navigation }) => {
   const [recipeTitle, setRecipeTitle] = useState("");
@@ -18,6 +19,7 @@ const RecipesScreen = ({ navigation }) => {
   }, []);
   return (
     <View>
+      <RecipeCard />
       <Text>{name}</Text>
       <Text>{ingredient}</Text>
       <Text>{recipeTitle}</Text>
