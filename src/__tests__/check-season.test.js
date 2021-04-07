@@ -1,4 +1,4 @@
-const { determineSeason } = require("./check-season");
+const { determineSeason } = require("../utils/check-season");
 
 describe("determineSeason()", () => {
   it("should return winter if a winter month is passed in", () => {

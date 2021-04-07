@@ -1,4 +1,4 @@
-const { mutateName } = require("./mutate-name");
+const { mutateName } = require("../utils/mutate-name");
 
 describe("mutateName()", () => {
   it("should return a string", () => {
