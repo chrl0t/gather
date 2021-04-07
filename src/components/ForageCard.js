@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around"
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontFamily: "KohinoorDevanagari-Light",
     textAlign: "center",
     fontWeight: "bold"
