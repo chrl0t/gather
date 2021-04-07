@@ -6,27 +6,29 @@ import Communications from "react-native-communications";
 import RecipeCard from "../components/RecipeCard";
 
 const RecipesScreen = ({ navigation }) => {
-  const [recipeTitle, setRecipeTitle] = useState("");
-  const [recipeImage, setRecipeImage] = useState(
-    "http://generousdeluxe.weebly.com/uploads/1/2/3/9/123925667/870805048.jpg"
-  );
-  const [recipeLink, setRecipeLink] = useState("");
+  const [recipes, setRecipes] = useState([]);
+  // const [recipeTitle, setRecipeTitle] = useState("");
+  // const [recipeImage, setRecipeImage] = useState(
+  //   "http://generousdeluxe.weebly.com/uploads/1/2/3/9/123925667/870805048.jpg"
+  // );
+  // const [recipeLink, setRecipeLink] = useState("");
   const name = navigation.getParam("name");
   const ingredient = mutateName(name);
 
   useEffect(() => {
-    fetchRecipes(ingredient, setRecipeTitle, setRecipeImage, setRecipeLink);
+    fetchRecipes(ingredient, setRecipes);
   }, []);
   return (
     <View>
-      <RecipeCard />
-      <Text>{name}</Text>
-      <Text>{ingredient}</Text>
-      <Text>{recipeTitle}</Text>
-      <Image style={styles.image} source={{ uri: recipeImage }} />
-      <TouchableOpacity onPress={() => Communications.web(recipeLink)}>
-        <Text>Click here for full recipe</Text>
-      </TouchableOpacity>
+      {recipes.map((recipe) => {
+        return (
+          <RecipeCard
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            url={recipe.recipe.url}
+          />
+        );
+      })}
     </View>
   );
 };
