@@ -4,34 +4,41 @@ import { mutateName } from "../utils/mutate-name";
 import { checkIfVeg } from "../utils/check-if-veg";
 import { fetchRecipes } from "../api/edamam";
 import RecipeCard from "../components/RecipeCard";
+import Loading from "../components/Loading";
 
 const RecipesScreen = ({ navigation }) => {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const name = navigation.getParam("name");
   const ingredient = mutateName(name);
 
   useEffect(() => {
-    fetchRecipes(ingredient, setRecipes);
+    fetchRecipes(ingredient, setRecipes, setLoading);
   }, []);
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{name} Recipes</Text>
-      <ScrollView>
-        {recipes.map((recipe) => {
-          return (
-            <RecipeCard
-              title={recipe.recipe.label}
-              image={recipe.recipe.image}
-              url={recipe.recipe.url}
-              key={recipe.recipe.label}
-              healthLabel={checkIfVeg(recipe.recipe.healthLabels)}
-            />
-          );
-        })}
-      </ScrollView>
-    </View>
-  );
+
+  if (loading) {
+    return <Loading />;
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>{name} Recipes</Text>
+        <ScrollView>
+          {recipes.map((recipe) => {
+            return (
+              <RecipeCard
+                title={recipe.recipe.label}
+                image={recipe.recipe.image}
+                url={recipe.recipe.url}
+                key={recipe.recipe.label}
+                healthLabel={checkIfVeg(recipe.recipe.healthLabels)}
+              />
+            );
+          })}
+        </ScrollView>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
