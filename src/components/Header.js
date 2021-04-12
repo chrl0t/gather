@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#3C754C"
   },
   title: {
-    fontSize: 50,
+    fontSize: 45,
     textAlign: "center",
     fontFamily: "KohinoorDevanagari-Light",
     color: "white"
