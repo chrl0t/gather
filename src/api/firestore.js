@@ -19,7 +19,8 @@ export async function fetchForage(
   setLatin,
   setDescription,
   setIdentification,
-  setImage
+  setImage,
+  setLoading
 ) {
   const foragesRef = db.collection("forages").where("id", "==", id);
   const snapshot = await foragesRef.get();
@@ -32,4 +33,5 @@ export async function fetchForage(
   setDescription(forageInfo.description);
   setIdentification(forageInfo.identification);
   setImage(forageInfo.mainimage);
+  setLoading(false);
 }

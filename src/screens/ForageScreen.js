@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useEffect } from "react/cjs/react.development";
 import { fetchForage } from "../api/firestore";
+import Loading from "../components/Loading";
 
 const ForageScreen = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const ForageScreen = ({ navigation }) => {
   const [image, setImage] = useState(
     "https://i1.wp.com/www.cssscript.com/wp-content/uploads/2014/10/iOS-OS-X-Style-Pure-CSS-Loading-Spinner.jpg?fit=400%2C300&ssl=1"
   );
+  const [loading, setLoading] = useState(true);
   const id = navigation.getParam("id");
 
   useEffect(() => {
@@ -21,26 +23,31 @@ const ForageScreen = ({ navigation }) => {
       setLatin,
       setDescription,
       setIdentification,
-      setImage
+      setImage,
+      setLoading
     );
   }, []);
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{name}</Text>
-      <Text style={styles.latinTitle}>{latin}</Text>
-      <Image style={styles.image} source={{ uri: image }} />
-      <Text style={styles.description}>{description}</Text>
-      <Text style={styles.identification}>Identification:</Text>
-      <Text style={styles.description}>{identification}</Text>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("Recipes", { name });
-        }}
-      >
-        <Text style={styles.recipes}>Click here for recipes</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  if (loading) {
+    return <Loading />;
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.latinTitle}>{latin}</Text>
+        <Image style={styles.image} source={{ uri: image }} />
+        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.identification}>Identification:</Text>
+        <Text style={styles.description}>{identification}</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Recipes", { name });
+          }}
+        >
+          <Text style={styles.recipes}>Click here for recipes</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
