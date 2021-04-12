@@ -30,7 +30,7 @@ const RecipesScreen = ({ navigation }) => {
                 title={recipe.recipe.label}
                 image={recipe.recipe.image}
                 url={recipe.recipe.url}
-                key={recipe.recipe.label}
+                key={recipe.recipe.uri}
                 healthLabel={checkIfVeg(recipe.recipe.healthLabels)}
               />
             );
