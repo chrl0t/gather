@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
             );
           }}
         />
-        <Footer />
+        <Footer navigation={navigation} />
       </View>
     );
   }

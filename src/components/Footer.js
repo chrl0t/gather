@@ -1,10 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const Footer = () => {
+const Footer = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>My Foraging Spots</Text>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Saved");
+        }}
+      >
+        <Text style={styles.title}>My Foraging Spots</Text>
+      </TouchableOpacity>
     </View>
   );
 };
