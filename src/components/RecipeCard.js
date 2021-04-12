@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
     textTransform: "capitalize",
     fontSize: 27,
     fontFamily: "KohinoorDevanagari-Light",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    paddingBottom: 10
   },
   healthLabel: {
     fontFamily: "KohinoorDevanagari-Light",
@@ -61,7 +62,9 @@ const styles = StyleSheet.create({
   },
   link: {
     fontFamily: "KohinoorDevanagari-Light",
-    fontSize: 18
+    fontSize: 18,
+    color: "#3C754C",
+    fontWeight: "bold"
   }
 });
 
