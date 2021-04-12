@@ -78,7 +78,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 20,
     alignSelf: "center",
-    padding: 10
+    padding: 10,
+    color: "#3C754C"
   }
 });
 
