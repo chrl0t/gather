@@ -9,6 +9,7 @@ import {
 import Loading from "../components/Loading";
 import Header from "../components/Header";
 import ForageCard from "../components/ForageCard";
+import Footer from "../components/Footer";
 import { fetchListOfForages } from "../api/firestore";
 
 const HomeScreen = ({ navigation }) => {
@@ -42,6 +43,7 @@ const HomeScreen = ({ navigation }) => {
             );
           }}
         />
+        <Footer />
       </View>
     );
   }
