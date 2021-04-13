@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
-import MapView from "react-native-maps";
+import { Text, StyleSheet, View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
+import CustomMarker from "./CustomMarker";
 
 const Map = () => {
   return (
@@ -12,7 +13,11 @@ const Map = () => {
         latitudeDelta: 0.01,
         longitudeDelta: 0.01
       }}
-    />
+    >
+      <Marker coordinate={{ latitude: 54.54871, longitude: -1.24906 }}>
+        <CustomMarker />
+      </Marker>
+    </MapView>
   );
 };
 
