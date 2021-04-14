@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 const CustomMarker = () => (
   <View>
-    <Text>🍄</Text>
+    <Text style={{ elevation: 10, fontSize: 20 }}>🍄</Text>
   </View>
 );
 

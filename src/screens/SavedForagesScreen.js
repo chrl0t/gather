@@ -5,7 +5,6 @@ import Map from "../components/Map";
 const SavedForagesScreen = () => {
   return (
     <View>
-      <Text>Saved Forages Screen</Text>
       <Map />
     </View>
   );
