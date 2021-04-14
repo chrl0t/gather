@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 const Footer = ({ navigation }) => {
   return (
@@ -9,7 +10,7 @@ const Footer = ({ navigation }) => {
           navigation.navigate("Saved");
         }}
       >
-        <Text style={styles.title}>My Foraging Spots</Text>
+        <Feather style={styles.icon} size={45} name='map-pin' />
       </TouchableOpacity>
     </View>
   );
@@ -19,12 +20,10 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     paddingBottom: 25,
-    backgroundColor: "#3C754C"
+    backgroundColor: "#3C754C",
+    alignItems: "center"
   },
-  title: {
-    fontSize: 35,
-    textAlign: "center",
-    fontFamily: "KohinoorDevanagari-Light",
+  icon: {
     color: "white"
   }
 });
