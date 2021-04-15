@@ -7,6 +7,13 @@ const Footer = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
+          navigation.navigate("Home");
+        }}
+      >
+        <Feather name='home' size={45} style={styles.icon} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
           navigation.navigate("Map");
         }}
       >
