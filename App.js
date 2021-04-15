@@ -3,14 +3,14 @@ import { createAppContainer } from "react-navigation";
 import HomeScreen from "./src/screens/HomeScreen";
 import ForageScreen from "./src/screens/ForageScreen";
 import RecipesScreen from "./src/screens/RecipesScreen";
-import SavedForagesScreen from "./src/screens/SavedForagesScreen";
+import MapScreen from "./src/screens/MapScreen";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
     Forage: ForageScreen,
     Recipes: RecipesScreen,
-    Saved: SavedForagesScreen
+    Map: MapScreen
   },
   {
     initialRouteName: "Home",

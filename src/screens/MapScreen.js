@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
 
-const SavedForagesScreen = ({ navigation }) => {
+const MapScreen = ({ navigation }) => {
   return (
     <View>
       <Map />
@@ -13,4 +13,4 @@ const SavedForagesScreen = ({ navigation }) => {
 };
 const styles = StyleSheet.create({});
 
-export default SavedForagesScreen;
+export default MapScreen;

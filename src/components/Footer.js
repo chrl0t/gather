@@ -7,7 +7,7 @@ const Footer = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Saved");
+          navigation.navigate("Map");
         }}
       >
         <Feather style={styles.icon} size={45} name='map-pin' />
