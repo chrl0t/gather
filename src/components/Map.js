@@ -1,7 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { textWithoutEncoding } from "react-native-communications";
-import MapView, { Marker, Callout } from "react-native-maps";
+import { StyleSheet } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 import CustomMarker from "./CustomMarker";
 
 const Map = () => {
