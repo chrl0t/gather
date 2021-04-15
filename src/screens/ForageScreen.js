@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useEffect } from "react/cjs/react.development";
 import { fetchForage } from "../api/firestore";
 import Loading from "../components/Loading";
+import Footer from "../components/Footer";
 
 const ForageScreen = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -45,6 +46,7 @@ const ForageScreen = ({ navigation }) => {
         >
           <Text style={styles.recipes}>Click here for recipes</Text>
         </TouchableOpacity>
+        <Footer navigation={navigation} />
       </View>
     );
   }

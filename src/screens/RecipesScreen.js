@@ -5,6 +5,7 @@ import { checkIfVeg } from "../utils/check-if-veg";
 import { fetchRecipes } from "../api/edamam";
 import RecipeCard from "../components/RecipeCard";
 import Loading from "../components/Loading";
+import Footer from "../components/Footer";
 
 const RecipesScreen = ({ navigation }) => {
   const [recipes, setRecipes] = useState([]);
@@ -36,6 +37,7 @@ const RecipesScreen = ({ navigation }) => {
             );
           })}
         </ScrollView>
+        <Footer navigation={navigation} />
       </View>
     );
   }
