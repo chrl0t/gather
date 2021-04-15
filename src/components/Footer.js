@@ -12,6 +12,7 @@ const Footer = ({ navigation }) => {
       >
         <Feather style={styles.icon} size={45} name='map-pin' />
       </TouchableOpacity>
+      <Feather style={styles.icon} name='heart' size={45} />
     </View>
   );
 };
@@ -21,7 +22,8 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingBottom: 25,
     backgroundColor: "#3C754C",
-    alignItems: "center"
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
   icon: {
     color: "white"
