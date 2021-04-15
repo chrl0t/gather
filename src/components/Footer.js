@@ -12,7 +12,13 @@ const Footer = ({ navigation }) => {
       >
         <Feather style={styles.icon} size={45} name='map-pin' />
       </TouchableOpacity>
-      <Feather style={styles.icon} name='heart' size={45} />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Saved");
+        }}
+      >
+        <Feather style={styles.icon} name='heart' size={45} />
+      </TouchableOpacity>
     </View>
   );
 };
