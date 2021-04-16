@@ -4,6 +4,8 @@ Gather is a mobile foraging app which i'm currently building using React Native 
 
 I am using 'The Urban Forager' by Hoxton Mini Press for foraging info, and the Edamam Recipe API for suggested recipes.
 
+<img src='https://user-images.githubusercontent.com/70201135/114994960-40d5c800-9e95-11eb-9edc-017c0e0e1d46.jpeg' width=400>
+
 # Tech Used
 
 - React Native
