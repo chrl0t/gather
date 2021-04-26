@@ -18,7 +18,12 @@ const HomeScreen = ({ navigation }) => {
   const [season, setSeason] = useState("Spring");
 
   useEffect(() => {
-    fetchListOfForages(season, setForages, setLoading);
+    const loadForages = async () => {
+      const forages = await fetchListOfForages(season);
+      setForages(forages);
+      setLoading(false);
+    };
+    loadForages();
   }, []);
 
   if (loading) {
