@@ -18,16 +18,18 @@ const ForageScreen = ({ navigation }) => {
   const id = navigation.getParam("id");
 
   useEffect(() => {
-    fetchForage(
-      id,
-      setName,
-      setLatin,
-      setDescription,
-      setIdentification,
-      setImage,
-      setLoading
-    );
+    const loadForage = async () => {
+      const forage = await fetchForage(id);
+      setName(forage.name);
+      setLatin(forage.latin);
+      setDescription(forage.description);
+      setIdentification(forage.identification);
+      setImage(forage.image);
+      setLoading(false);
+    };
+    loadForage();
   }, []);
+
   if (loading) {
     return <Loading />;
   } else {

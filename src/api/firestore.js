@@ -11,25 +11,12 @@ export async function fetchListOfForages(season) {
   return fetchedForages;
 }
 
-export async function fetchForage(
-  id,
-  setName,
-  setLatin,
-  setDescription,
-  setIdentification,
-  setImage,
-  setLoading
-) {
+export async function fetchForage(id) {
   const foragesRef = db.collection("forages").where("id", "==", id);
   const snapshot = await foragesRef.get();
   let forageInfo = {};
   snapshot.forEach((doc) => {
     forageInfo = doc.data();
   });
-  setName(forageInfo.name);
-  setLatin(forageInfo.latin);
-  setDescription(forageInfo.description);
-  setIdentification(forageInfo.identification);
-  setImage(forageInfo.mainimage);
-  setLoading(false);
+  return forageInfo;
 }
