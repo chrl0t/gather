@@ -15,7 +15,12 @@ const RecipesScreen = ({ navigation }) => {
   const ingredient = mutateName(name);
 
   useEffect(() => {
-    fetchRecipes(ingredient, setRecipes, setLoading);
+    const loadRecipes = async () => {
+      const recipes = await fetchRecipes(ingredient);
+      setRecipes(recipes);
+      setLoading(false);
+    };
+    loadRecipes();
   }, []);
 
   if (loading) {
