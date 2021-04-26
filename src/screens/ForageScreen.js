@@ -20,11 +20,12 @@ const ForageScreen = ({ navigation }) => {
   useEffect(() => {
     const loadForage = async () => {
       const forage = await fetchForage(id);
-      setName(forage.name);
-      setLatin(forage.latin);
-      setDescription(forage.description);
-      setIdentification(forage.identification);
-      setImage(forage.image);
+      const { name, latin, description, identification, image } = forage;
+      setName(name);
+      setLatin(latin);
+      setDescription(description);
+      setIdentification(identification);
+      setImage(image);
       setLoading(false);
     };
     loadForage();
