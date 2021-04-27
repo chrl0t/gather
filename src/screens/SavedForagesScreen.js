@@ -1,10 +1,31 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity
+} from "react-native";
+import SavedCard from "../components/SavedCard";
 
 const SavedForagesScreen = () => {
+  const savedItems = [
+    { id: 1, name: "Saved Forages" },
+    { id: 2, name: "Saved Recipes" }
+  ];
   return (
     <View>
-      <Text>Saved</Text>
+      <FlatList
+        data={savedItems}
+        keyExtractor={(result) => result.name}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity>
+              <SavedCard savedItem={item} />
+            </TouchableOpacity>
+          );
+        }}
+      ></FlatList>
     </View>
   );
 };
