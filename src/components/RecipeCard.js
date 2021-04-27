@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
 import Communications from "react-native-communications";
 
 const RecipeCard = ({ title, image, url, healthLabel }) => {
@@ -7,6 +8,9 @@ const RecipeCard = ({ title, image, url, healthLabel }) => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: image }} />
+        <TouchableOpacity>
+          <Feather size={30} name='heart' style={styles.icon} />
+        </TouchableOpacity>
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{title}</Text>
@@ -65,6 +69,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#3C754C",
     fontWeight: "bold"
+  },
+  icon: {
+    alignSelf: "center",
+    paddingTop: 10
   }
 });
 

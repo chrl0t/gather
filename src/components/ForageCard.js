@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 const ForageCard = ({ forage }) => {
   const { name, availability, locations, warnings, image } = forage;
@@ -13,6 +14,9 @@ const ForageCard = ({ forage }) => {
         <Text style={styles.info}>{locations}</Text>
         <Text style={styles.heading}>Caution:</Text>
         <Text style={styles.info}>{warnings}</Text>
+        <TouchableOpacity>
+          <Feather size={30} name='heart' style={styles.icon} />
+        </TouchableOpacity>
       </View>
       <Image
         style={styles.image}
@@ -59,6 +63,10 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: "column",
     width: "50%"
+  },
+  icon: {
+    alignSelf: "center",
+    paddingTop: 10
   }
 });
 
