@@ -4,7 +4,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ForageScreen from "./src/screens/ForageScreen";
 import RecipesScreen from "./src/screens/RecipesScreen";
 import MapScreen from "./src/screens/MapScreen";
-import SavedForagesScreen from "./src/screens/SavedForagesScreen";
+import SavedScreen from "./src/screens/SavedScreen";
 
 const navigator = createStackNavigator(
   {
@@ -12,7 +12,7 @@ const navigator = createStackNavigator(
     Forage: ForageScreen,
     Recipes: RecipesScreen,
     Map: MapScreen,
-    Saved: SavedForagesScreen
+    Saved: SavedScreen
   },
   {
     initialRouteName: "Home",
