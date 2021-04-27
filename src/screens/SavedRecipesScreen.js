@@ -2,11 +2,11 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Footer from "../components/Footer";
 
-const SavedForagesScreen = ({ navigation }) => {
+const SavedRecipesScreen = ({ navigation }) => {
   return (
     <View>
       <View style={styles.container}>
-        <Text>Saved Forages</Text>
+        <Text>Saved Recipes</Text>
       </View>
       <Footer navigation={navigation} />
     </View>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SavedForagesScreen;
+export default SavedRecipesScreen;

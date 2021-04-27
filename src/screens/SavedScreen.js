@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const SavedScreen = ({ navigation }) => {
   const savedItems = [
     { id: "SavedForages", name: "Saved Forages" },
-    { id: 2, name: "Saved Recipes" }
+    { id: "SavedRecipes", name: "Saved Recipes" }
   ];
   return (
     <View style={styles.container}>
