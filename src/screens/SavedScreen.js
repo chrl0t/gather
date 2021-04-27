@@ -3,9 +3,9 @@ import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import SavedCard from "../components/SavedCard";
 import Footer from "../components/Footer";
 
-const SavedForagesScreen = ({ navigation }) => {
+const SavedScreen = ({ navigation }) => {
   const savedItems = [
-    { id: 1, name: "Saved Forages" },
+    { id: "SavedForages", name: "Saved Forages" },
     { id: 2, name: "Saved Recipes" }
   ];
   return (
@@ -15,7 +15,11 @@ const SavedForagesScreen = ({ navigation }) => {
         keyExtractor={(result) => result.name}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(item.id);
+              }}
+            >
               <SavedCard savedItem={item} />
             </TouchableOpacity>
           );
@@ -33,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SavedForagesScreen;
+export default SavedScreen;
