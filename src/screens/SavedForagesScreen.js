@@ -14,7 +14,7 @@ const SavedForagesScreen = () => {
     { id: 2, name: "Saved Recipes" }
   ];
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={savedItems}
         keyExtractor={(result) => result.name}
@@ -29,6 +29,11 @@ const SavedForagesScreen = () => {
     </View>
   );
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#3C754C",
+    height: "100%"
+  }
+});
 
 export default SavedForagesScreen;
