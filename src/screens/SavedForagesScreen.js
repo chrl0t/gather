@@ -32,7 +32,8 @@ const SavedForagesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#3C754C",
-    height: "100%"
+    height: "100%",
+    paddingTop: 20
   }
 });
 
