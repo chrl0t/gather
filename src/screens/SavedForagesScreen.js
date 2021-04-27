@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity
-} from "react-native";
+import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import SavedCard from "../components/SavedCard";
+import Footer from "../components/Footer";
 
-const SavedForagesScreen = () => {
+const SavedForagesScreen = ({ navigation }) => {
   const savedItems = [
     { id: 1, name: "Saved Forages" },
     { id: 2, name: "Saved Recipes" }
@@ -26,12 +21,13 @@ const SavedForagesScreen = () => {
           );
         }}
       ></FlatList>
+      <Footer navigation={navigation} />
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#3C754C",
+    backgroundColor: "white",
     height: "100%",
     paddingTop: 20
   }

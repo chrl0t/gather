@@ -12,7 +12,7 @@ const SavedCard = ({ savedItem }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: "#3C754C",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 42,
     fontWeight: "bold",
-    color: "#3C754C",
-    alignSelf: "center"
+    color: "white",
+    alignSelf: "center",
+    fontFamily: "KohinoorDevanagari-Light"
   }
 });
 
