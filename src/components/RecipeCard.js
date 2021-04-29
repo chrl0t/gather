@@ -2,13 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Communications from "react-native-communications";
+import { postFavouriteRecipe } from "../api/firestore";
 
 const RecipeCard = ({ title, image, url, healthLabel }) => {
+  const onPress = () => postFavouriteRecipe(title, image, url, healthLabel);
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: image }} />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
           <Feather size={30} name='heart' style={styles.icon} />
         </TouchableOpacity>
       </View>
