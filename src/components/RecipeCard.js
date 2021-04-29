@@ -4,16 +4,25 @@ import { Feather } from "@expo/vector-icons";
 import Communications from "react-native-communications";
 import { postFavouriteRecipe } from "../api/firestore";
 
-const RecipeCard = ({ title, image, url, healthLabel }) => {
+const RecipeCard = ({ title, image, url, healthLabel, heart }) => {
+  const needIcon = heart;
+
   const onPress = () => postFavouriteRecipe(title, image, url, healthLabel);
+
+  let icon = null;
+  if (needIcon) {
+    icon = (
+      <TouchableOpacity onPress={onPress}>
+        <Feather size={30} name='heart' style={styles.icon} />
+      </TouchableOpacity>
+    );
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: image }} />
-        <TouchableOpacity onPress={onPress}>
-          <Feather size={30} name='heart' style={styles.icon} />
-        </TouchableOpacity>
+        {icon}
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{title}</Text>

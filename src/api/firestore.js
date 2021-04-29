@@ -32,6 +32,17 @@ export async function fetchListOfSavedForages() {
   return fetchedForages;
 }
 
+export async function fetchListOfSavedRecipes() {
+  const recipesRef = db.collection("saved-recipes");
+  const snapshot = await recipesRef.get();
+  const fetchedRecipes = [];
+  snapshot.forEach((doc) => {
+    const recipe = doc.data();
+    fetchedRecipes.push(recipe);
+  });
+  return fetchedRecipes;
+}
+
 export const postFavouriteForage = (forage) => {
   const { name, availability, locations, warnings, image } = forage;
   db.collection("saved-forages").add({

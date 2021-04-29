@@ -38,6 +38,7 @@ const RecipesScreen = ({ navigation }) => {
                 url={recipe.recipe.url}
                 key={recipe.recipe.uri}
                 healthLabel={checkIfVeg(recipe.recipe.healthLabels)}
+                heart={true}
               />
             );
           })}
