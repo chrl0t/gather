@@ -22,18 +22,21 @@ export async function fetchForage(id) {
 }
 
 export const postFavouriteForage = (forage) => {
-  const { name, image } = forage;
+  const { name, availability, locations, warnings, image } = forage;
   db.collection("saved-forages").add({
-    name: name,
-    image: image
+    name,
+    availability,
+    locations,
+    warnings,
+    image
   });
 };
 
 export const postFavouriteRecipe = (title, image, url, healthLabel) => {
   db.collection("saved-recipes").add({
-    title: title,
-    image: image,
-    url: url,
-    healthLabel: healthLabel
+    title,
+    image,
+    url,
+    healthLabel
   });
 };
