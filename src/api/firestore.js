@@ -20,3 +20,11 @@ export async function fetchForage(id) {
   });
   return forageInfo;
 }
+
+export const postFavouriteForage = (forage) => {
+  const { id, name, image } = forage;
+  db.collection("saved-forages").add({
+    name: name,
+    image: image
+  });
+};

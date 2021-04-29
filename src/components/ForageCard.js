@@ -1,9 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { postFavouriteForage } from "../api/firestore";
 import { Feather } from "@expo/vector-icons";
 
 const ForageCard = ({ forage }) => {
   const { name, availability, locations, warnings, image } = forage;
+  const onPress = () => postFavouriteForage(forage);
+
   return (
     <View style={styles.container}>
       <View style={styles.infoContainer}>
@@ -14,7 +17,7 @@ const ForageCard = ({ forage }) => {
         <Text style={styles.info}>{locations}</Text>
         <Text style={styles.heading}>Caution:</Text>
         <Text style={styles.info}>{warnings}</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
           <Feather size={30} name='heart' style={styles.icon} />
         </TouchableOpacity>
       </View>
