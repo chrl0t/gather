@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
                   navigation.navigate("Forage", { id: item.id });
                 }}
               >
-                <ForageCard forage={item} />
+                <ForageCard forage={item} heart={true} />
               </TouchableOpacity>
             );
           }}

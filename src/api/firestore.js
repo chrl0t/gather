@@ -21,6 +21,17 @@ export async function fetchForage(id) {
   return forageInfo;
 }
 
+export async function fetchListOfSavedForages() {
+  const foragesRef = db.collection("saved-forages");
+  const snapshot = await foragesRef.get();
+  const fetchedForages = [];
+  snapshot.forEach((doc) => {
+    const forage = doc.data();
+    fetchedForages.push(forage);
+  });
+  return fetchedForages;
+}
+
 export const postFavouriteForage = (forage) => {
   const { name, availability, locations, warnings, image } = forage;
   db.collection("saved-forages").add({
