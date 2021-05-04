@@ -5,15 +5,15 @@ import Communications from "react-native-communications";
 import { postFavouriteRecipe } from "../api/firestore";
 
 const RecipeCard = ({ title, image, url, healthLabel, heart }) => {
-  const needIcon = heart;
+  const needHeartIcon = heart;
 
   const onPress = () => postFavouriteRecipe(title, image, url, healthLabel);
 
-  let icon = null;
-  if (needIcon) {
-    icon = (
+  let heartIcon = null;
+  if (needHeartIcon) {
+    heartIcon = (
       <TouchableOpacity onPress={onPress}>
-        <Feather size={30} name='heart' style={styles.icon} />
+        <Feather size={30} name='heart' style={styles.heartIcon} />
       </TouchableOpacity>
     );
   }
@@ -22,7 +22,7 @@ const RecipeCard = ({ title, image, url, healthLabel, heart }) => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: image }} />
-        {icon}
+        {heartIcon}
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{title}</Text>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     color: "#3C754C",
     fontWeight: "bold"
   },
-  icon: {
+  heartIcon: {
     alignSelf: "center",
     paddingTop: 10
   }

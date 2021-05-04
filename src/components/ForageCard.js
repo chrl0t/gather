@@ -5,15 +5,15 @@ import { Feather } from "@expo/vector-icons";
 
 const ForageCard = ({ forage, heart }) => {
   const { name, availability, locations, warnings, image } = forage;
-  const needIcon = heart;
+  const needHeartIcon = heart;
 
   const onPress = () => postFavouriteForage(forage);
 
-  let icon = null;
-  if (needIcon) {
-    icon = (
+  let heartIcon = null;
+  if (needHeartIcon) {
+    heartIcon = (
       <TouchableOpacity onPress={onPress}>
-        <Feather size={30} name='heart' style={styles.icon} />
+        <Feather size={30} name='heart' style={styles.heartIcon} />
       </TouchableOpacity>
     );
   }
@@ -28,7 +28,7 @@ const ForageCard = ({ forage, heart }) => {
         <Text style={styles.info}>{locations}</Text>
         <Text style={styles.heading}>Caution:</Text>
         <Text style={styles.info}>{warnings}</Text>
-        {icon}
+        {heartIcon}
       </View>
       <Image
         style={styles.image}
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     width: "50%"
   },
-  icon: {
+  heartIcon: {
     alignSelf: "center",
     paddingTop: 10
   }
