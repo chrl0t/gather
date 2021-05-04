@@ -40,7 +40,7 @@ const SavedForagesScreen = ({ navigation }) => {
                   navigation.navigate("Forage", { id: item.id });
                 }}
               >
-                <ForageCard forage={item} heart={false} />
+                <ForageCard forage={item} bin={true} />
               </TouchableOpacity>
             );
           }}

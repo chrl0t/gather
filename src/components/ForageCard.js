@@ -3,17 +3,28 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { postFavouriteForage } from "../api/firestore";
 import { Feather } from "@expo/vector-icons";
 
-const ForageCard = ({ forage, heart }) => {
+const ForageCard = ({ forage, heart, bin }) => {
   const { name, availability, locations, warnings, image } = forage;
   const needHeartIcon = heart;
+  const needBinIcon = bin;
 
   const onPress = () => postFavouriteForage(forage);
 
   let heartIcon = null;
+  let binIcon = null;
+
   if (needHeartIcon) {
     heartIcon = (
       <TouchableOpacity onPress={onPress}>
         <Feather size={30} name='heart' style={styles.heartIcon} />
+      </TouchableOpacity>
+    );
+  }
+
+  if (needBinIcon) {
+    binIcon = (
+      <TouchableOpacity>
+        <Feather size={30} name='trash-2' style={styles.binIcon} />
       </TouchableOpacity>
     );
   }
@@ -29,6 +40,7 @@ const ForageCard = ({ forage, heart }) => {
         <Text style={styles.heading}>Caution:</Text>
         <Text style={styles.info}>{warnings}</Text>
         {heartIcon}
+        {binIcon}
       </View>
       <Image
         style={styles.image}
@@ -79,6 +91,11 @@ const styles = StyleSheet.create({
   heartIcon: {
     alignSelf: "center",
     paddingTop: 10
+  },
+  binIcon: {
+    alignSelf: "center",
+    paddingTop: 10,
+    color: "black"
   }
 });
 

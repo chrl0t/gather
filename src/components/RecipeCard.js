@@ -4,16 +4,27 @@ import { Feather } from "@expo/vector-icons";
 import Communications from "react-native-communications";
 import { postFavouriteRecipe } from "../api/firestore";
 
-const RecipeCard = ({ title, image, url, healthLabel, heart }) => {
+const RecipeCard = ({ title, image, url, healthLabel, heart, bin }) => {
   const needHeartIcon = heart;
+  const needBinIcon = bin;
 
   const onPress = () => postFavouriteRecipe(title, image, url, healthLabel);
 
   let heartIcon = null;
+  let binIcon = null;
+
   if (needHeartIcon) {
     heartIcon = (
       <TouchableOpacity onPress={onPress}>
         <Feather size={30} name='heart' style={styles.heartIcon} />
+      </TouchableOpacity>
+    );
+  }
+
+  if (needBinIcon) {
+    binIcon = (
+      <TouchableOpacity>
+        <Feather size={30} name='trash-2' style={styles.binIcon} />
       </TouchableOpacity>
     );
   }
@@ -23,6 +34,7 @@ const RecipeCard = ({ title, image, url, healthLabel, heart }) => {
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{ uri: image }} />
         {heartIcon}
+        {binIcon}
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.title}>{title}</Text>
@@ -83,6 +95,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   heartIcon: {
+    alignSelf: "center",
+    paddingTop: 10
+  },
+  binIcon: {
     alignSelf: "center",
     paddingTop: 10
   }

@@ -40,7 +40,7 @@ const SavedRecipesScreen = ({ navigation }) => {
                 url={recipe.url}
                 key={recipe.url}
                 healthLabel={recipe.healthLabel}
-                heart={false}
+                bin={true}
               />
             );
           })}
