@@ -45,20 +45,42 @@ export async function fetchListOfSavedRecipes() {
 
 export const postFavouriteForage = (forage) => {
   const { name, availability, locations, warnings, image } = forage;
-  db.collection("saved-forages").add({
-    name,
-    availability,
-    locations,
-    warnings,
-    image
-  });
+  const postForage = () => {
+    db.collection("saved-forages").add({
+      name,
+      availability,
+      locations,
+      warnings,
+      image
+    });
+  };
+  const checkForages = async () => {
+    const forages = await fetchListOfSavedForages();
+    if (forages.filter((item) => item.name === name).length > 0) {
+      return null;
+    } else {
+      postForage();
+    }
+  };
+  checkForages();
 };
 
 export const postFavouriteRecipe = (title, image, url, healthLabel) => {
-  db.collection("saved-recipes").add({
-    title,
-    image,
-    url,
-    healthLabel
-  });
+  const postRecipe = () => {
+    db.collection("saved-recipes").add({
+      title,
+      image,
+      url,
+      healthLabel
+    });
+  };
+  const checkRecipes = async () => {
+    const recipes = await fetchListOfSavedRecipes();
+    if (recipes.filter((item) => item.title === title).length > 0) {
+      return null;
+    } else {
+      postRecipe();
+    }
+  };
+  checkRecipes();
 };
