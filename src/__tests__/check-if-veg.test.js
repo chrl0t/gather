@@ -16,7 +16,7 @@ describe("checkIfVeg()", () => {
   it("should return no if neither vegan or vegetarian are in passed array", () => {
     const input = ["Pescatarian", "Gluten-Free", "Wheat-Free"];
     const output = checkIfVeg(input);
-    const expectedOutput = "No";
+    const expectedOutput = null;
     expect(output).toEqual(expectedOutput);
   });
 });

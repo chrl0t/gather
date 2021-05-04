@@ -4,6 +4,6 @@ export const checkIfVeg = (healthLabelsArray) => {
   } else if (healthLabelsArray.includes("Vegetarian")) {
     return "Vegetarian";
   } else {
-    return "No";
+    return null;
   }
 };
