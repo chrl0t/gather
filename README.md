@@ -18,4 +18,3 @@ I am using 'The Urban Forager' by Hoxton Mini Press for foraging info, and the E
 
 - Firebase Authentication
 - Dynamic Map where users can add their own markers
-- Favourites Screen
